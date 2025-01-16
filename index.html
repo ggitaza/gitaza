@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .background-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-animation .circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 15s linear infinite;
+            border-radius: 50%;
+        }
+
+        .background-animation .circle {
+            width: 50px;
+            height: 50px;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-1000px) rotate(360deg);
+            }
+        }
+
+        .profile-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            animation: fadeInScale 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        
+    /* Efek Putaran dan Pembesaran Saat Dimuat */
+    @keyframes spinAndScale {
+        0% {
+            transform: rotate(0deg) scale(0.8);
+            opacity: 0;
+        }
+        50% {
+            transform: rotate(180deg) scale(1.2);
+            opacity: 0.7;
+        }
+        100% {
+            transform: rotate(360deg) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .profile-container img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid #ffffff;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        animation: spinAndScale 1.5s ease-out;
+        transition: all 0.3s ease;
+    }
+
+    /* Efek Cahaya Saat Diklik */
+    .profile-container img:active {
+        box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 
+                    0 0 80px rgba(0, 255, 255, 0.6), 
+                    0 0 120px rgba(0, 255, 255, 0.4);
+        transform: scale(1.1);
+    }
+
+        @keyframes fadeInSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-media-text {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #d1e8ff;
+            animation: flicker 3s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+        }
+
+        .link-buttons {
+            margin-top: 20px;
+        }
+
+        .link-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        .link-buttons a:hover {
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .link-buttons i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #d1e8ff;
+        }
+
+        .contact-container {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #d1e8ff;
+        }
+
+        .contact-container a {
+            color: #ff4081;
+            text-decoration: none;
+        }
+
+        .contact-container a:hover {
+            color: #ff79c6;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 15px;
+            }
+
+            .profile-container h1 {
+                font-size: 20px;
+            }
+
+            .link-buttons a {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .social-media-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .profile-container h1 {
+                font-size: 18px;
+            }
+
+            .link-buttons a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .social-media-text {
+                font-size: 12px;
+            }
+
+            .footer, .contact-container {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="circle" style="top: 10%; left: 20%;"></div>
+        <div class="circle" style="top: 30%; left: 70%;"></div>
+        <div class="circle" style="top: 50%; left: 10%;"></div>
+    </div>
+
+    <div class="profile-container">
+        <img src="gitaza.png" alt="Profile Picture">
+        <h1>GITAZA</h1>
+        <p class="social-media-text">Ikuti GITAZA di sosial media</p>
+        <div class="link-buttons">
+            <a href="https://www.youtube.com/@GitaNraeni" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://www.instagram.com/ggitaza" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@ggitaza" target="_blank"><i class="fab fa-tiktok"></i> Tiktok</a>
+            <a href="https://x.com/GitaNraeni" target="_blank"><i class="fab fa-twitter"></i> X</a>
+            <a href="https://saweria.co/gitaza" target="_blank"><i class="fas fa-dollar-sign"></i> Saweria</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> Tentang GITAZA</a>
+        </div>
+        
+
+        <!-- Contact Us Section -->
+        <div class="contact-container">
+            <p>Hubungi kami melalui <a href="https://t.me/ggitaza" target="_blank">Telegram</a></p>
+        </div>
+        <div class="footer">&copy; 2024 GITAZA</div>
+    </div>
+</body>
+</html>
